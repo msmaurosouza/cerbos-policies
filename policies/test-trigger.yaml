@@ -1,0 +1,9 @@
+apiVersion: api.cerbos.dev/v1
+principalPolicy:
+  principal: "spiffe://shoracius.com.br/robot-github-actions-test"
+  version: "default"
+  rules:
+    - resource: "nhi_api"
+      actions:
+        - action: "GET"
+          effect: EFFECT_ALLOW
