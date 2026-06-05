@@ -1,0 +1,22 @@
+name: Publish Policies to Cerbos Hub
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'policies/**'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Publish to Cerbos Hub
+        uses: cerbos/cerbos-store-action@v1
+        with:
+          client-id: ${{ secrets.CERBOS_HUB_CLIENT_ID }}
+          client-secret: ${{ secrets.CERBOS_HUB_CLIENT_SECRET }}
+          store-id: ${{ secrets.CERBOS_HUB_STORE_ID }}
+          path: policies/
