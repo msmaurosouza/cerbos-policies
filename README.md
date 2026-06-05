@@ -1,3 +1,2 @@
-# Cerbos Policies
-
-Policies managed by HORACIUS IAM with GitHub Actions automation.
+# cerbos-policies
+Cerbos policies managed with GitHub Actions
