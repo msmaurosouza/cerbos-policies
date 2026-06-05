@@ -13,10 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: Install cerbosctl
+        run: |
+          wget -q https://github.com/cerbos/cerbos/releases/download/v0.53.0/cerbosctl_0.53.0_Linux_x86_64.tar.gz
+          tar -xzf cerbosctl_0.53.0_Linux_x86_64.tar.gz
+          chmod +x cerbosctl
+      
       - name: Publish to Cerbos Hub
-        uses: cerbos/cerbos-store-action@v1
-        with:
-          store-id: ${{ secrets.CERBOS_HUB_STORE_ID }}
-          client-id: ${{ secrets.CERBOS_HUB_CLIENT_ID }}
-          client-secret: ${{ secrets.CERBOS_HUB_CLIENT_SECRET }}
-          directory: policies/
+        run: |
+          ./cerbosctl hub store add-files \
+            --store-id="${{ secrets.CERBOS_HUB_STORE_ID }}" \
+            --client-id="${{ secrets.CERBOS_HUB_CLIENT_ID }}" \
+            --client-secret="${{ secrets.CERBOS_HUB_CLIENT_SECRET }}" \
+            policies/*.yaml
