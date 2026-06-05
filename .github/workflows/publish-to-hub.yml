@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'policies/**'
+      - "policies/**"
 
 jobs:
   publish:
@@ -21,8 +21,5 @@ jobs:
       
       - name: Publish to Cerbos Hub
         run: |
-          ./cerbosctl hub store add-files \
-            --store-id="${{ secrets.CERBOS_HUB_STORE_ID }}" \
-            --client-id="${{ secrets.CERBOS_HUB_CLIENT_ID }}" \
-            --client-secret="${{ secrets.CERBOS_HUB_CLIENT_SECRET }}" \
-            policies/*.yaml
+          ./cerbosctl hub store add-files --store-id="${{ secrets.CERBOS_HUB_STORE_ID }}" --client-id="${{ secrets.CERBOS_HUB_CLIENT_ID }}" --client-secret="${{ secrets.CERBOS_HUB_CLIENT_SECRET }}" policies/*.yaml
+
