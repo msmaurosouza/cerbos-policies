@@ -6,13 +6,10 @@ principalPolicy:
     - resource: "nhi_api"
       actions:
         - action: "GET"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "POST"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "PUT"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "DELETE"
-          effect: EFFECT_ALLOW
-      condition:
-        match:
-          expr: "request.headers['x-token-aprovacao'] != ''"
+          effect: EFFECT_DENY
