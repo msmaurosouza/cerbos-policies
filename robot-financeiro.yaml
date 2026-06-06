@@ -4,4 +4,5 @@ resourcePolicy:
   resource: "nhi_api"
   rules:
     - actions: ["GET", "POST", "PUT", "DELETE"]
-      effect: EFFECT_ALLOW
+      roles: ["*"]
+      effect: EFFECT_DENY
