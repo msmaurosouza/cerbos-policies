@@ -1,8 +1,0 @@
-apiVersion: api.cerbos.dev/v1
-resourcePolicy:
-  version: "default"
-  resource: "nhi_api"
-  rules:
-    - actions: ["GET", "POST", "PUT", "DELETE"]
-      roles: ["*"]
-      effect: EFFECT_DENY
