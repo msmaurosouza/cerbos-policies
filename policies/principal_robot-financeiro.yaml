@@ -10,11 +10,3 @@ resourcePolicy:
       principals:
         - principal: "spiffe://shoracius.com.br/robot-financeiro"
           effect: EFFECT_ALLOW
-          condition:
-            match:
-              expr: "request.headers['x-token-aprovacao'] != ''"
-        - principal: "spiffe://shoracius.com.br/robot-financeiro"
-          effect: EFFECT_DENY
-          condition:
-            match:
-              expr: "request.headers['x-token-aprovacao'] == ''"
