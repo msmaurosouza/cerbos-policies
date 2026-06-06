@@ -1,0 +1,21 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  resource: "nhi_api"
+  rules:
+    - actions: ["GET"]
+      principals:
+        - principal: "spiffe://shoracius.com.br/robot-financeiro"
+          effect: EFFECT_ALLOW
+
+    - actions: ["POST", "PUT", "DELETE"]
+      principals:
+        - principal: "spiffe://shoracius.com.br/robot-financeiro"
+          effect: EFFECT_ALLOW
+          condition:
+            match:
+              expr: "request.headers['x-token-aprovacao'] != ''"
+        - principal: "spiffe://shoracius.com.br/robot-financeiro"
+          effect: EFFECT_DENY
+          condition:
+            match:
+              expr: "request.headers['x-token-aprovacao'] == ''"
