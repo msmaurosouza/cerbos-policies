@@ -3,6 +3,6 @@ principalPolicy:
   principal: "spiffe://shoracius.com.br/robot-financeiro"
   version: "default"
   rules:
-    - resources: ["nhi_api"]
+    - resource: "nhi_api"
       actions: ['GET', 'POST', 'PUT', 'DELETE']
-      effect: EFFECT_ALLOW
+      effect: EFFECT_DENY
