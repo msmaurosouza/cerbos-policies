@@ -1,8 +1,7 @@
 apiVersion: api.cerbos.dev/v1
-principalPolicy:
-  principal: "spiffe://shoracius.com.br/robot-financeiro"
+resourcePolicy:
   version: "default"
+  resource: "nhi_api"
   rules:
-    - resource: "nhi_api"
-      actions: ['GET', 'POST', 'PUT', 'DELETE']
-      effect: EFFECT_ALLOW
+    - actions: ["GET", "POST", "PUT", "DELETE"]
+      effect: EFFECT_DENY
