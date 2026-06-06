@@ -3,10 +3,5 @@ resourcePolicy:
   resource: nhi_api
   rules:
     - actions: ['GET', 'POST', 'PUT', 'DELETE']
+      roles: ['nhi']
       effect: EFFECT_ALLOW
-      principal:
-        roles:
-          - nhi
-      condition:
-        match:
-          expr: 'request.principal.id == "spiffe://shoracius.com.br/robot-financeiro"'
