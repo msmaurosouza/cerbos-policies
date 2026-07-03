@@ -1,9 +1,5 @@
 {
   "spiffe://shoracius.com.br/robot-financeiro": {
-    "leitura": {
-      "acao": "bloquear",
-      "condicao": "sem_restricao"
-    },
     "escrita": {
       "acao": "bloquear",
       "condicao": "sem_restricao"
