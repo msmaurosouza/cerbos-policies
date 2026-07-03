@@ -3,6 +3,10 @@
     "leitura": {
       "acao": "permitir",
       "condicao": "sem_restricao"
+    },
+    "escrita": {
+      "acao": "bloquear",
+      "condicao": "sem_restricao"
     }
   }
 }
