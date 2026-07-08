@@ -3,10 +3,6 @@
     "leitura": {
       "acao": "permitir",
       "condicao": "sem_restricao"
-    },
-    "escrita": {
-      "acao": "permitir_com_aprovacao",
-      "condicao": "requer_aprovacao_humana"
     }
   }
 }
