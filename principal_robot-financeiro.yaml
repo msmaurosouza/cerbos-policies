@@ -6,11 +6,11 @@ principalPolicy:
     - resource: "nhi_api"
       actions:
         - action: "GET"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "HEAD"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "OPTIONS"
-          effect: EFFECT_ALLOW
+          effect: EFFECT_DENY
         - action: "POST"
           effect: EFFECT_ALLOW
           condition:
