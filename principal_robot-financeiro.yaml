@@ -12,10 +12,22 @@ principalPolicy:
         - action: "OPTIONS"
           effect: EFFECT_ALLOW
         - action: "POST"
-          effect: EFFECT_DENY
+          effect: EFFECT_ALLOW
+          condition:
+            match:
+              expr: "P.attr.token != ''"
         - action: "PUT"
-          effect: EFFECT_DENY
+          effect: EFFECT_ALLOW
+          condition:
+            match:
+              expr: "P.attr.token != ''"
         - action: "PATCH"
-          effect: EFFECT_DENY
+          effect: EFFECT_ALLOW
+          condition:
+            match:
+              expr: "P.attr.token != ''"
         - action: "DELETE"
-          effect: EFFECT_DENY
+          effect: EFFECT_ALLOW
+          condition:
+            match:
+              expr: "P.attr.token != ''"
