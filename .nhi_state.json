@@ -5,8 +5,8 @@
       "condicao": "sem_restricao"
     },
     "escrita": {
-      "acao": "bloquear",
-      "condicao": "sem_restricao"
+      "acao": "permitir_com_aprovacao",
+      "condicao": "requer_aprovacao_humana"
     }
   }
 }
